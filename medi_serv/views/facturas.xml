@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_factura_list" model="ir.ui.view">
+        <field name="name">medi_serv.factura.list</field>
+        <field name="model">medi_serv.factura</field>
+        <field name="arch" type="xml">
+            <list string="Facturas">
+                <field name="name"/>
+                <field name="paciente_id"/>
+                <field name="fecha_factura"/>
+                <field name="total_medicamentos"/>
+                <field name="estado"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_factura_form" model="ir.ui.view">
+        <field name="name">medi_serv.factura.form</field>
+        <field name="model">medi_serv.factura</field>
+        <field name="arch" type="xml">
+            <form string="Factura">
+                <sheet>
+                    <group>
+                        <field name="name" readonly="1"/>
+                        <field name="paciente_id"/>
+                        <field name="fecha_factura"/>
+                        <field name="total_medicamentos" readonly="1"/>
+                        <field name="estado"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_factura" model="ir.actions.act_window">
+        <field name="name">Facturas</field>
+        <field name="res_model">medi_serv.factura</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_factura_root" name="Facturas" sequence="20" parent="menu_root" action="action_factura"/>
+</odoo>

@@ -6,4 +6,6 @@ from . import medicamento
 from . import paciente
 from . import medico
 from . import habitacion
+from . import preparacionQ
+from . import factura
 

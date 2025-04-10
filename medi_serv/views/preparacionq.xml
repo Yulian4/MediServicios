@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_preparacionq_list" model="ir.ui.view">
+        <field name="name">medi_serv.preparacion_q.list</field>
+        <field name="model">medi_serv.preparacion_q</field>
+        <field name="arch" type="xml">
+            <list string="Preparaciones Quirúrgicas">
+                <field name="paciente_id"/>
+                <field name="descripcion"/>
+                <field name="fecha_preparacion"/>
+                <field name="medicamento_id"/>
+                <field name="estado"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_preparacionq_form" model="ir.ui.view">
+        <field name="name">medi_serv.preparacion_q.form</field>
+        <field name="model">medi_serv.preparacion_q</field>
+        <field name="arch" type="xml">
+            <form string="Preparación Quirúrgica">
+                <sheet>
+                    <group>
+                        <field name="paciente_id"/>
+                        <field name="descripcion"/>
+                        <field name="fecha_preparacion"/>
+                        <field name="medicamento_id"/>
+                        <field name="estado"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_preparacionq" model="ir.actions.act_window">
+        <field name="name">Preparaciones Quirúrgicas</field>
+        <field name="res_model">medi_serv.preparacion_q</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_preparacionq_root" name="Preparaciones Quirúrgicas" sequence="10" parent="menu_root" action="action_preparacionq"/>
+</odoo>

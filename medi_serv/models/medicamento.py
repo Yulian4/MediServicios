@@ -24,3 +24,5 @@ class Medicamento (models.Model):
         ('topica', 'Tópica'),
     ], string="Vía de Administración")
     dosis_recomendada = fields.Char(string="Dosis Recomendada")
+    precio = fields.Float(string="Precio", required=True)
+    

@@ -20,5 +20,6 @@ class Medico(models.Model):
         ('femenino', 'Femenino'),
         ('otro', 'Otro'),
     ], string='Sexo')
+    sede = fields.Char( string='Sede',required=True)
     
     
