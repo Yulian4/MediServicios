@@ -2,13 +2,13 @@
 {
     'name': "mediServ",
 
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
+    'summary': "Modulo de atención médica Clínica del Parque.",
 
     'description': """
-Long description of module's purpose
+Modulo en Odoo que integra el flujo completo de atención médica de la Clínica del Parque, desde el ingreso del paciente hasta el alta y facturación, incluyendo soporte a decisiones clínicas, automatización de tareas, y estrategias de captación de clientes.
     """,
 
-    'author': "My Company",
+    'author': "Julian Gordillo / Yuliana Yate / Alexis Rodriguez",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -22,7 +22,7 @@ Long description of module's purpose
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
     ],
