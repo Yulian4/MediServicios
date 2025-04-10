@@ -24,13 +24,21 @@ class Paciente(models.Model):
     nombre_acompanante = fields.Char(string='Nombre del Acompañante')
     telefono_acompanante = fields.Char(string='Teléfono del Acompañante')
     parentezco_acompanante = fields.Char(string='Parentesco del Acompañante')
-    
+
+    @api.onchange('acompanante')
+    def _onchange_acompanante(self):
+        if self.acompanante == 'no':
+            self.nombre_acompanante = False
+            self.telefono_acompanante = False
+            self.parentezco_acompanante = False
+
     @api.depends('fecha_nacimiento')
-        
     def compute_edad(self):
         for record in self:
             if record.fecha_nacimiento:
-                edad = fields.Date.today().year - record.fecha_nacimiento.year
-                record.edad = edad if edad >= 0 else 0
+                today = fields.Date.today()
+                record.edad = today.year - record.fecha_nacimiento.year - (
+                    (today.month, today.day) < (record.fecha_nacimiento.month, record.fecha_nacimiento.day)
+                )
             else:
                 record.edad = 0
