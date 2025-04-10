@@ -6,43 +6,52 @@
             <field name="arch" type="xml">
                 <form string="Paciente">
                     <sheet>
-                       <group>
+                        <group>
                             <group>
                                 <field name="name"/>
                                 <field name="apellidos"/>
-                                <field name="tipodoic"/> 
+                                <field name="tipodoic"/>
+                                <field name="fecha_nacimiento"/>
+                                <field name="edad" readonly="1"/>
                             </group>
                             <group>
                                 <field name="telefono"/>
                                 <field name="email"/>
-                                <field name="fecha_nacimiento"/>
+                                <field name="direccion"/>
+                                <field name="sexo"/>
                             </group>
                         </group>
-                        <group>
-                            <field name="sexo"/>
+                        <group string="Información del Acompañante">
                             <field name="acompanante"/>
+                            <field name="nombre_acompanante"/>
+                            <field name="telefono_acompanante"/>
+                            <field name="parentezco_acompanante"/>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
 
-        <record id="view_medico_list" model="ir.ui.view">
-            <field name="name">medico.list</field>
-            <field name="model">medi_serv.medico</field>
+        <!-- Vista de lista para Paciente -->
+        <record id="view_paciente_list" model="ir.ui.view">
+            <field name="name">view_paciente_list</field>
+            <field name="model">medi_serv.paciente</field>
             <field name="arch" type="xml">
-                <list string="Medicos">
+                <list string="Pacientes">
                     <field name="name"/>
-                    <field name="especialidad"/>
+                    <field name="apellidos"/>
+                    <field name="tipodoic"/>
                     <field name="telefono"/>
                     <field name="email"/>
+                    <field name="edad"/>
+                    <field name="sexo"/>
                 </list>
             </field>
         </record>
 
         <record id="action_paciente" model="ir.actions.act_window">
             <field name="name">Pacientes</field>
-            <field name="res_model">medi_serv.medico</field>
+            <field name="res_model">medi_serv.paciente</field>
             <field name="view_mode">list,form</field>
         </record>
 
