@@ -1,0 +1,325 @@
+<odoo>
+    <record id="view_historia_clinica_form" model="ir.ui.view">
+        <field name="name">Historia Clínica Form</field>
+        <field name="model">medi_serv.historia_clinica</field>
+        <field name="arch" type="xml">
+            <form string="Historia Clínica">
+                <sheet>
+                    <group>
+                        <field name="cod_historia"/>
+                        <field name="id_pac"/>
+                        <field name="nomb_med"/>
+                        <field name="fech_apertura"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Datos del Paciente">
+                            <group>
+                                <field name="nomb_pac" readonly="1"/>
+                                <field name="fecha_nacimiento" readonly="1"/>
+                                <field name="direccion_pac" readonly="1"/>
+                                <field name="telefono_pac" readonly="1"/>
+                                <field name="edad_pac" readonly="1"/>
+                            </group>
+                            <group string="Acompañante">
+                                <field name="nomb_acompanante" readonly="1"/>
+                                <field name="tel_acompanante" readonly="1"/>
+                                <field name="parent_acompanante" readonly="1"/>
+                            </group>
+                        </page>
+
+                        <page string="Motivo de Consulta">
+                            <group>
+                                <field name="motivo_consulta"/>
+                                <field name="descripcion_consulta"/>
+                            </group>
+                        </page>
+
+                        <page string="Antecedentes">
+                            <group string="Patológicos">
+                                <field name="arritmia"/>
+                                <field name="autoinmunes"/>
+                                <field name="cancer"/>
+                                <field name="enf_cardiovascular"/>
+                                <field name="infarto"/>
+                                <field name="insuf_card"/>
+                                <field name="emergencia_hip"/>
+                            </group>
+
+                            <group string="Quirúrgicos">
+                                <field name="ant_quir_desc"/>
+                                <field name="ant_quir_fecha"/>
+                            </group>
+
+                            <group string="Traumatológicos">
+                                <field name="ant_trauma_desc"/>
+                                <field name="ant_trauma_fecha"/>
+                            </group>
+
+                            <group string="Transfusiones">
+                                <field name="ant_transf_desc"/>
+                                <field name="ant_transf_fecha"/>
+                            </group>
+
+                            <group string="Alergias">
+                                <field name="ant_alerg_desc"/>
+                                <field name="ant_alerg_fecha"/>
+                            </group>
+
+                            <group string="Farmacológicos">
+                                <field name="ant_farma_desc"/>
+                                <field name="ant_farma_fecha"/>
+                            </group>
+                        </page>
+
+                        <page string="Gino-Obstétricos">
+                            <group>
+                                <field name="menarquia"/>
+                                <field name="ciclos_menstrual"/>
+                                <field name="autoexam_mama"/>
+                                <field name="inicio_rel_sex"/>
+                                <field name="activ_sex"/>
+                                <field name="num_companeros"/>
+                                <field name="met_planific"/>
+                                <field name="observaciones_gino"/>
+                            </group>
+                        </page>
+
+                        <page string="Familiares y Hábitos">
+                            <group string="Antecedentes Familiares">
+                                <field name="hta_fam"/>
+                                <field name="ca_prostata"/>
+                                <field name="diabetes_fam"/>
+                                <field name="ca_colon"/>
+                                <field name="otro_cancer"/>
+                                <field name="otros_antec_fam"/>
+                            </group>
+
+                            <group string="Hábitos Saludables">
+                                <field name="bajo_sal"/>
+                                <field name="toma_antihip"/>
+                                <field name="act_fisica"/>
+                                <field name="bajo_grasa"/>
+                                <field name="azucar_alta"/>
+                                <field name="rica_fibra"/>
+                                <field name="peso_adecuado"/>
+                                <field name="toma_agua"/>
+                                <field name="frutas_verduras"/>
+                                <field name="duerme_8h"/>
+                            </group>
+
+                            <group string="Hábitos No Saludables">
+                                <field name="psicoactivas"/>
+                                <field name="alcohol"/>
+                                <field name="fumador"/>
+                                <field name="estres"/>
+                                <field name="sedentarismo"/>
+                            </group>
+                        </page>
+
+                        <page string="Examen Físico y Diagnóstico">
+                            <group>
+                                <field name="presion_arterial"/>
+                                <field name="frecuencia_cardiaca"/>
+                                <field name="peso"/>
+                            </group>
+                            <group>
+                                <field name="analisis_plan"/>
+                                <field name="principal"/>
+                                <field name="cod_diag"/>
+                                <field name="descripcion_diag"/>
+                                <field name="finalidad_diag"/>
+                            </group>
+                        </page>
+
+                        <page string="Ordenamiento">
+                            <group>
+                                <field name="codigo_proc"/>
+                                <field name="cantidad_proc"/>
+                                <field name="nota_proc"/>
+                                <field name="tipo_proc"/>
+                            </group>
+                            <group>
+                                <field name="codigo_medic"/>
+                                <field name="dosificacion"/>
+                                <field name="cantidad_medic"/>
+                                <field name="dias_tratamiento"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_historia_clinica_form" model="ir.ui.view">
+        <field name="name">Historia Clínica Form</field>
+        <field name="model">medi_serv.historia_clinica</field>
+        <field name="arch" type="xml">
+            <form string="Historia Clínica">
+                <sheet>
+                    <!-- Grupo de Información Básica -->
+                    <group>
+                        <field name="cod_historia"/>
+                        <field name="id_pac"/>
+                        <field name="nomb_med"/>
+                        <field name="fech_apertura"/>
+                    </group>
+
+                    <!-- Pestañas del Formulario (Notebook) -->
+                    <notebook>
+                        <page string="Datos del Paciente">
+                            <group>
+                                <field name="nomb_pac" readonly="1"/>
+                                <field name="fecha_nacimiento" readonly="1"/>
+                                <field name="direccion_pac" readonly="1"/>
+                                <field name="telefono_pac" readonly="1"/>
+                                <field name="edad_pac" readonly="1"/>
+                            </group>
+                            <group string="Acompañante">
+                                <field name="nomb_acompanante" readonly="1"/>
+                                <field name="tel_acompanante" readonly="1"/>
+                                <field name="parent_acompanante" readonly="1"/>
+                            </group>
+                        </page>
+
+                        <page string="Motivo de Consulta">
+                            <group>
+                                <field name="motivo_consulta"/>
+                                <field name="descripcion_consulta"/>
+                            </group>
+                        </page>
+
+                        <page string="Antecedentes">
+                            <group string="Patológicos">
+                                <field name="arritmia"/>
+                                <field name="autoinmunes"/>
+                                <field name="cancer"/>
+                                <field name="enf_cardiovascular"/>
+                                <field name="infarto"/>
+                                <field name="insuf_card"/>
+                                <field name="emergencia_hip"/>
+                            </group>
+
+                            <group string="Quirúrgicos">
+                                <field name="ant_quir_desc"/>
+                                <field name="ant_quir_fecha"/>
+                            </group>
+
+                            <group string="Traumatológicos">
+                                <field name="ant_trauma_desc"/>
+                                <field name="ant_trauma_fecha"/>
+                            </group>
+
+                            <group string="Transfusiones">
+                                <field name="ant_transf_desc"/>
+                                <field name="ant_transf_fecha"/>
+                            </group>
+
+                            <group string="Alergias">
+                                <field name="ant_alerg_desc"/>
+                                <field name="ant_alerg_fecha"/>
+                            </group>
+
+                            <group string="Farmacológicos">
+                                <field name="ant_farma_desc"/>
+                                <field name="ant_farma_fecha"/>
+                            </group>
+                        </page>
+
+                        <page string="Gino-Obstétricos">
+                            <group>
+                                <field name="menarquia"/>
+                                <field name="ciclos_menstrual"/>
+                                <field name="autoexam_mama"/>
+                                <field name="inicio_rel_sex"/>
+                                <field name="activ_sex"/>
+                                <field name="num_companeros"/>
+                                <field name="met_planific"/>
+                                <field name="observaciones_gino"/>
+                            </group>
+                        </page>
+
+                        <page string="Familiares y Hábitos">
+                            <group string="Antecedentes Familiares">
+                                <field name="hta_fam"/>
+                                <field name="ca_prostata"/>
+                                <field name="diabetes_fam"/>
+                                <field name="ca_colon"/>
+                                <field name="otro_cancer"/>
+                                <field name="otros_antec_fam"/>
+                            </group>
+
+                            <group string="Hábitos Saludables">
+                                <field name="bajo_sal"/>
+                                <field name="toma_antihip"/>
+                                <field name="act_fisica"/>
+                                <field name="bajo_grasa"/>
+                                <field name="azucar_alta"/>
+                                <field name="rica_fibra"/>
+                                <field name="peso_adecuado"/>
+                                <field name="toma_agua"/>
+                                <field name="frutas_verduras"/>
+                                <field name="duerme_8h"/>
+                            </group>
+
+                            <group string="Hábitos No Saludables">
+                                <field name="psicoactivas"/>
+                                <field name="alcohol"/>
+                                <field name="fumador"/>
+                                <field name="estres"/>
+                                <field name="sedentarismo"/>
+                            </group>
+                        </page>
+
+                        <page string="Examen Físico y Diagnóstico">
+                            <group>
+                                <field name="presion_arterial"/>
+                                <field name="frecuencia_cardiaca"/>
+                                <field name="peso"/>
+                            </group>
+                            <group>
+                                <field name="analisis_plan"/>
+                                <field name="principal"/>
+                                <field name="cod_diag"/>
+                                <field name="descripcion_diag"/>
+                                <field name="finalidad_diag"/>
+                            </group>
+                        </page>
+
+                        <page string="Ordenamiento">
+                            <group>
+                                <field name="codigo_proc"/>
+                                <field name="cantidad_proc"/>
+                                <field name="nota_proc"/>
+                                <field name="tipo_proc"/>
+                            </group>
+                            <group>
+                                <field name="codigo_medic"/>
+                                <field name="dosificacion"/>
+                                <field name="cantidad_medic"/>
+                                <field name="dias_tratamiento"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción para ver el formulario Historia Clínica -->
+    <record id="action_historia_clinica" model="ir.actions.act_window">
+        <field name="name">Historia Clínica</field>
+        <field name="res_model">medi_serv.historia_clinica</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_historia_clinica_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Menú para Historia Clínica -->
+    <menuitem id="menu_historia_clinica" name="Historia Clínica" parent="menu_root" sequence="10"/>
+
+    <!-- Menú para crear o ver Historia Clínica -->
+    <menuitem id="submenu_historia_clinica" name="Gestionar Historia Clínica" parent="menu_historia_clinica" action="action_historia_clinica" sequence="1"/>
+
+</odoo>

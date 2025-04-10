@@ -32,6 +32,8 @@ Modulo en Odoo que integra el flujo completo de atención médica de la Clínica
         'views/habitaciones.xml',
         'views/preparacionq.xml',
         'views/facturas.xml',
+        'views/historias.xml',
+        'views/tratamientos.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

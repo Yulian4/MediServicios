@@ -6,3 +6,5 @@ access_medi_serv_medi_serv4,medi_serv.medico,model_medi_serv_paciente,base.group
 access_medi_serv_medi_serv5,medi_serv.habitacion,model_medi_serv_habitacion,base.group_user,1,1,1,1
 access_medi_serv_medi_serv6,medi_serv.preparacion_q,model_medi_serv_preparacion_q,base.group_user,1,1,1,1
 access_medi_serv_medi_serv7,medi_serv.factura,model_medi_serv_factura,base.group_user,1,1,1,1
+access_medi_serv_medi_serv8,medi_serv.historia_clinica,model_medi_serv_historia_clinica,base.group_user,1,1,1,1
+access_medi_serv_medi_serv9,medi_serv.trata_proc_cirugia,model_medi_serv_trata_proc_cirugia,base.group_user,1,1,1,1
