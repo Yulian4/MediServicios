@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medi_serv_medi_serv,medi_serv.medi_serv,model_medi_serv_medi_serv,base.group_user,1,1,1,1
