@@ -6,12 +6,14 @@
           <form string="Medicamento">
               <sheet>
                   <group>
+                      <field name="codigo"/>
                       <field name="nombre"/>
                       <field name="principio_activo"/>
                       <field name="forma_farmaceutica"/>
                       <field name="concentracion"/>
                       <field name="via_administracion"/>
                       <field name="dosis_recomendada"/>
+                      <field name="precio"/>
                   </group>
               </sheet>
           </form>
