@@ -3,4 +3,6 @@
 from . import models
 from . import insumo
 from . import medicamento
+from . import paciente
+from . import medico
 
