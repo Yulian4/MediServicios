@@ -3,4 +3,4 @@ access_medi_serv_medi_serv,medi_serv.insumo,model_medi_serv_insumo,base.group_us
 access_medi_serv_medi_serv2,medi_serv.medicamento,model_medi_serv_medicamento,base.group_user,1,1,1,1
 access_medi_serv_medi_serv3,medi_serv.paciente,model_medi_serv_medico,base.group_user,1,1,1,1
 access_medi_serv_medi_serv4,medi_serv.medico,model_medi_serv_paciente,base.group_user,1,1,1,1
-
+access_medi_serv_medi_serv5,medi_serv.habitacion,model_medi_serv_habitacion,base.group_user,1,1,1,1

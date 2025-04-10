@@ -5,4 +5,5 @@ from . import insumo
 from . import medicamento
 from . import paciente
 from . import medico
+from . import habitacion
 

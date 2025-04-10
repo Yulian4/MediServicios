@@ -1,0 +1,40 @@
+<!-- Archivo: views/habitacion_views.xml -->
+
+<odoo>
+    <record id="view_habitacion_form" model="ir.ui.view">
+        <field name="name">medi_serv.habitacion.form</field>
+        <field name="model">medi_serv.habitacion</field>
+        <field name="arch" type="xml">
+            <form string="Habitación">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="codigo"/>
+                        <field name="disponible"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_habitacion_list" model="ir.ui.view">
+        <field name="name">medi_serv.habitacion.list</field>
+        <field name="model">medi_serv.habitacion</field>
+        <field name="arch" type="xml">
+            <list string="Habitaciones">
+                <field name="nombre"/>
+                <field name="codigo"/>
+                <field name="disponible"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medi_serv_habitacion" model="ir.actions.act_window">
+        <field name="name">Habitaciones</field>
+        <field name="res_model">medi_serv.habitacion</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <menuitem id="menu_medi_serv_habitacion" name="Habitaciones" parent="menu_root" action="action_medi_serv_habitacion"/>
+</odoo>
