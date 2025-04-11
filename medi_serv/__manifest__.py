@@ -18,11 +18,12 @@ Modulo en Odoo que integra el flujo completo de atención médica de la Clínica
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','website'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+       
         'views/ficha_clinica.xml',
         #'views/views.xml',
         'views/lobby_template.xml',
