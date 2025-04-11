@@ -46,8 +46,8 @@
                                 <td>
                                     <t t-esc="factura.estado"/>
                                 </td>
-                                <td>
-                                    <a t-attf-href="/factura/{{ factura.id }}" class="btn btn-primary">Ver</a>
+                                <td class="botons-fac">
+                                    <a t-attf-href="/factura/{{ factura.id }}" class="btn btn-primary">Imprimir</a>
                                     <form method="POST" t-attf-action="/factura/eliminar/{{factura.id}}">
                                         <button class="btn btn-danger" type="submit">Eliminar</button>
                                     </form>

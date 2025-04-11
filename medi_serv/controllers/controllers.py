@@ -46,3 +46,14 @@ class FacturaController(http.Controller):
         return request.render('medi_serv.vista_factura_detalle', {
             'factura': factura
         })
+    
+    #implementacion de api para medicamentos
+    class MedicamentoController(http.Controller):
+
+        @http.route('/medicamentos', auth='public', website=True)
+        def mostrar_medicamentos(self, **kw):
+            medicamentos = request.env['medi_serv.medicamento'].sudo().search([])
+            return request.render('medi_serv.vista_medicamento_web', {
+                'medicamentos': medicamentos
+            })
+

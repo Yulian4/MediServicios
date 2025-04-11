@@ -46,5 +46,12 @@ Modulo en Odoo que integra el flujo completo de atención médica de la Clínica
     'demo': [
         'demo/demo.xml',
     ],
+    #10:22 creacion de assets para css
+    'assets': {
+    'web.assets_frontend': [
+        'medi_serv/static/src/css/factura.css',
+    ],
+},
+
 }
 

@@ -1,0 +1,16 @@
+.contenedor-factura{
+    text-align: center;
+    padding: 50px;
+    border: 1px solid black;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.botons-fac{
+    display: flex;
+    gap: 5px;
+}
+
+.cuadrito-med{
+    border: 1px solid black;
+    color: blue;
+}
