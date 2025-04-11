@@ -38,8 +38,8 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <!-- Menú -->
+    <!-- Menú
     <menuitem id="menu_medi_serv_root" name="Gestión Médica" sequence="10"/>
-    <menuitem id="menu_medi_serv_alta" name="Altas Médicas" parent="menu_root" action="action_alta_medica" sequence="20"/>
+    <menuitem id="menu_medi_serv_alta" name="Altas Médicas" parent="menu_root" action="action_alta_medica" sequence="20"/> -->
 
 </odoo>

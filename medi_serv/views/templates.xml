@@ -17,6 +17,7 @@
     <menuitem id="menu_ficha_clinica" name="Fichas Clínicas" parent="menu_asistencial" action="action_ficha_clinica"/>
     <menuitem id="menu_preparacionq_root" name="Preparaciones Quirúrgicas" sequence="10" parent="menu_asistencial" action="action_preparacionq"/> 
     <menuitem id="menu_recuperacion_hosp" name="Recuperación Hospitalaria" parent="menu_asistencial" action="action_recuperacion_hosp"/>
-
-  </data>
+    <menuitem id="menu_historia_clinica" name="Historia Clínica" parent="menu_asistencial"  action="action_historia_clinica" sequence="10"/>
+    <menuitem id="menu_registro_cirugia" name="Registro de Cirugías" parent="menu_asistencial" action="action_registro_cirugia"/>
+  </data> 
 </odoo>
