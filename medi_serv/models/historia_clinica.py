@@ -125,5 +125,5 @@ class HistoriaClinica(models.Model):
     codigo_medic = fields.Many2one('medi_serv.medicamento', string='Código Medicamento')
     nombre_medic = fields.Char(related='codigo_medic.nombre', string='Nombre Medicamento')
     dosificacion = fields.Char(string='Dosificación')
-    cantidad_medic = fields.Integer(string='Cantidad')
+    cantidad_medic = fields.Integer(string='Cantidad medicamento')
     dias_tratamiento = fields.Integer(string='Días de Tratamiento')

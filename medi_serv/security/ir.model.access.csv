@@ -9,3 +9,5 @@ access_medi_serv_medi_serv7,medi_serv.factura,model_medi_serv_factura,base.group
 access_medi_serv_medi_serv8,medi_serv.historia_clinica,model_medi_serv_historia_clinica,base.group_user,1,1,1,1
 access_medi_serv_medi_serv9,medi_serv.trata_proc_cirugia,model_medi_serv_trata_proc_cirugia,base.group_user,1,1,1,1
 access_medi_serv_medi_serv10,medi_serv.estadoAtencion,model_medi_serv_estado,base.group_user,1,1,1,1
+access_medi_serv_medi_serv11,medi_serv.preparacionq_medicamento,model_medi_serv_preparacionq_medicamento,base.group_user,1,1,1,1
+access_medi_serv_medi_serv12,medi_serv.preparacionq_tratamiento,model_medi_serv_preparacionq_tratamiento,base.group_user,1,1,1,1
