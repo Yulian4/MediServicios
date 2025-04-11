@@ -8,3 +8,4 @@ access_medi_serv_medi_serv6,medi_serv.preparacion_q,model_medi_serv_preparacion_
 access_medi_serv_medi_serv7,medi_serv.factura,model_medi_serv_factura,base.group_user,1,1,1,1
 access_medi_serv_medi_serv8,medi_serv.historia_clinica,model_medi_serv_historia_clinica,base.group_user,1,1,1,1
 access_medi_serv_medi_serv9,medi_serv.trata_proc_cirugia,model_medi_serv_trata_proc_cirugia,base.group_user,1,1,1,1
+access_medi_serv_medi_serv10,medi_serv.estadoAtencion,model_medi_serv_estado,base.group_user,1,1,1,1

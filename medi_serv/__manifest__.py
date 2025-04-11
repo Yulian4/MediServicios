@@ -40,6 +40,7 @@ Modulo en Odoo que integra el flujo completo de atención médica de la Clínica
         'views/zfacturaimprimir.xml',
         #'views/zpaciente.xml',
         #'views/zpacienteEdit.xml',
+        'views/estadosAtencion.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
