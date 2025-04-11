@@ -8,8 +8,8 @@ class FichaClinica(models.Model):
     
     paciente_id = fields.Many2one('medi_serv.paciente', string='Paciente', required=True, readonly=True)
     
-#     historia_ids = fields.One2many('medi_serv.historia_clinica', 'id_pac', string='Historias Clínicas', readonly=True)
-#     preparacion_ids = fields.One2many('medi_serv.preparacion_q', 'paciente_id', string='Preparaciones Quirúrgicas', readonly=True)
+    historia_ids = fields.One2many('medi_serv.historia_clinica', 'id_pac', string='Historias Clínicas', readonly=True)
+    preparacion_ids = fields.One2many('medi_serv.preparacion_q', 'paciente_id', string='Preparaciones Quirúrgicas', readonly=True)
     
     # Campos relacionados a desarrollar en el futuro
     # registro_cirugia_ids = fields.One2many('medi_serv.registro_cirugia', 'paciente_id', string='Registros de Cirugía', readonly=True)
