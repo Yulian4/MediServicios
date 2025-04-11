@@ -38,14 +38,9 @@ Modulo en Odoo que integra el flujo completo de atención médica de la Clínica
         'views/zfactura.xml',
         'views/zfacturacrear.xml',
         'views/zfacturaimprimir.xml',
-        'views/zpaciente.xml',
-        'views/zpacientecrear.xml',
-        'views/zpacienteEdit.xml',
-        'views/estadosAtencion.xml',
-        #'views/inicio.xml'
-        'views/zmedicos.xml',
-        'views/zmedicoscrear.xml',
-        'views/zmedicoEdit.xml'
+        #'views/zpaciente.xml',
+        #'views/zpacienteEdit.xml',
+        'views/estadosAtencion.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
