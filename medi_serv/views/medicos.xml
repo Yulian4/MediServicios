@@ -20,6 +20,7 @@
                         </group>
                         <group>
                             <field name="sexo"/>
+                            <field name="sede"/>
                         </group>
                     </sheet>
                 </form>
@@ -35,6 +36,7 @@
                     <field name="especialidad"/>
                     <field name="telefono"/>
                     <field name="email"/>
+                    <field name="sede"/>
                 </list>
             </field>
         </record>
