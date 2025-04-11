@@ -3,6 +3,7 @@ from odoo import models, fields
 class Medicamento (models.Model):
     _name = "medi_serv.medicamento"
     _description  = "Tabla de medicamentos"
+    _rec_name = "nombre"
 
 
     codigo = fields.Integer (string="Codigo" ,required = True)
