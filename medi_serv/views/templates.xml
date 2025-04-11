@@ -10,9 +10,5 @@
     <menuitem id="menu_factura_root" name="Facturas" sequence="20" parent="menu_recepcion" action="action_factura"/>
     <menuitem id="menu_medicos" parent="menu_administrativo" action="action_medico" sequence="10"/>
 
-  <menuitem id="menu_asistencial" name="Area Asistencial" parent="menu_root"/>
-   <menuitem id="submenu_historia_clinica" name="Historias Clinicas" parent="menu_asistencial" action="action_historia_clinica" sequence="1"/>
-    <menuitem id="menu_preparacionq" name="Preparaciones Quirúrgicas" sequence="10" parent="menu_asistencial" action="action_preparacionq"/>
-     <menuitem id="menu_estado" name="Registro Signos Vitales" parent="menu_root" action="action_estado"/>
   </data>
 </odoo>

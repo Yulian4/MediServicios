@@ -12,3 +12,9 @@ access_medi_serv_medi_serv10,medi_serv.estadoAtencion,model_medi_serv_estado,bas
 access_medi_serv_medi_serv11,medi_serv.preparacionq_medicamento,model_medi_serv_preparacionq_medicamento,base.group_user,1,1,1,1
 access_medi_serv_medi_serv12,medi_serv.preparacionq_tratamiento,model_medi_serv_preparacionq_tratamiento,base.group_user,1,1,1,1
 access_medi_serv_medi_serv13,medi_serv.ficha_clinica,model_medi_serv_ficha_clinica,base.group_user,1,1,1,1
+access_medi_serv_medi_serv14,medi_serv.registro_cirugia,model_medi_registro_cirugia,base.group_user,1,1,1,1
+access_medi_serv_medi_serv15,medi_serv.alta_medica,model_medi_alta_medica,base.group_user,1,1,1,1
+access_medi_serv_medi_serv16,medi_serv.recuperacion_hosp,model_medi_recuperacion_hosp,base.group_user,1,1,1,1
+access_medi_serv_medi_serv17,medi_serv.evolucion_clinica,model_medi_serv_evolucion_clinica,base.group_user,1,1,1,1
+access_medi_serv_medi_serv18,medi_serv.nota_enfermeria,model_medi_serv_nota_enfermeria,base.group_user,1,1,1,1
+access_medi_serv_medi_serv19,medi_serv.nota_visita_medica,model_medi_serv_visita_medica,base.group_user,1,1,1,1

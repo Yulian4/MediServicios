@@ -12,3 +12,9 @@ from . import historia_clinica
 from . import tratamientos_proc_cirugias
 from . import estadoAtencion
 from . import ficha_clinica
+from . import registro_cirugia
+from . import alta_medica
+from . import recuperacion_hosp
+from . import evolucion_clinica
+from . import nota_enfermeria
+from . import visita_medica

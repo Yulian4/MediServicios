@@ -1,0 +1,31 @@
+<odoo>
+    <record id="view_registro_cirugia_form" model="ir.ui.view">
+        <field name="name">registro.cirugia.form</field>
+        <field name="model">medi_serv.registro_cirugia</field>
+        <field name="arch" type="xml">
+            <form string="Registro de Cirugía">
+                <sheet>
+                    <group>
+                        <field name="paciente_id"/>
+                        <field name="fecha_cirugia"/>
+                        <field name="medico_responsable_id"/>
+                        <field name="descripcion"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_registro_cirugia" model="ir.actions.act_window">
+        <field name="name">Registro de Cirugías</field>
+        <field name="res_model">medi_serv.registro_cirugia</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea el primer registro de cirugía.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_registro_cirugia" name="Registro de Cirugías" parent="menu_root" action="action_registro_cirugia"/>
+</odoo>
