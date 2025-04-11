@@ -38,6 +38,6 @@
     </record>
 
     <!-- Item de menú -->
-    <menuitem id="menu_tratamiento_proc" name="Tratamientos y Procedimientos Quirúrgicos"
-              parent="menu_root" action="action_tratamiento_proc"/>
+    <!-- <menuitem id="menu_tratamiento_proc" name="Tratamientos y Procedimientos Quirúrgicos"
+              parent="menu_root" action="action_tratamiento_proc"/> -->
 </odoo>
