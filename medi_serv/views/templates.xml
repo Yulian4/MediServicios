@@ -1,5 +1,23 @@
 <odoo>
     <data>
         <menuitem id="menu_root" name="Medi Servicios"/>
+          
+              <!-- Acción URL que redirige a tu ruta del controlador /facturas -->
+              <record id="action_facturas_web" model="ir.actions.act_url">
+                <field name="name">Ver Facturas Web</field>
+                <field name="url">/facturas</field>
+                <field name="target">self</field> <!-- o 'new' si quieres abrir en nueva pestaña -->
+              </record>
+          
+              <!-- Menú dentro de Medi Servicios que dispara la acción -->
+              <menuitem 
+                id="menu_facturas_web"
+                name="Facturas (web)"
+                parent="menu_root"
+                action="action_facturas_web"
+                sequence="10"
+              />
+
+          
     </data>
 </odoo>
