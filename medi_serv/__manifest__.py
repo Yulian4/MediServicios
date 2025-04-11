@@ -23,6 +23,7 @@ Modulo en Odoo que integra el flujo completo de atención médica de la Clínica
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+       
         'views/ficha_clinica.xml',
         #'views/views.xml',
         'views/lobby_template.xml',
