@@ -8,6 +8,8 @@
                 <field name="paciente_id"/>
                 <field name="fecha_factura"/>
                 <field name="total_medicamentos"/>
+                <field name="total_tratamientos"/>
+                <field name="total_general"/>
                 <field name="estado"/>
             </list>
         </field>
@@ -24,6 +26,8 @@
                         <field name="paciente_id"/>
                         <field name="fecha_factura"/>
                         <field name="total_medicamentos" readonly="1"/>
+                        <field name="total_tratamientos" readonly="1"/>
+                        <field name="total_general" readonly="1"/>
                         <field name="estado"/>
                     </group>
                     <footer>
