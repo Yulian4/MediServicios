@@ -66,5 +66,5 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem id="menu_preparacionq_root" name="Preparaciones Quirúrgicas" sequence="10" parent="menu_root" action="action_preparacionq"/>
+    <!-- <menuitem id="menu_preparacionq_root" name="Preparaciones Quirúrgicas" sequence="10" parent="menu_root" action="action_preparacionq"/> -->
 </odoo>
