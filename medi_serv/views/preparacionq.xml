@@ -7,7 +7,6 @@
                 <field name="paciente_id"/>
                 <field name="descripcion"/>
                 <field name="fecha_preparacion"/>
-                <field name="medicamento_id"/>
                 <field name="estado"/>
             </list>
         </field>
@@ -23,9 +22,39 @@
                         <field name="paciente_id"/>
                         <field name="descripcion"/>
                         <field name="fecha_preparacion"/>
-                        <field name="medicamento_id"/>
                         <field name="estado"/>
                     </group>
+                    <notebook>
+                        <page string="Medicamentos">
+                            <field name="medicamento_line_ids">
+                                <list editable="bottom">
+                                    <field name="medicamento_id"/>
+                                    <field name="cantidad"/>
+                                </list>
+                                <form string="Medicamento">
+                                    <group>
+                                        <field name="medicamento_id"/>
+                                        <field name="cantidad"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+
+                        <page string="Tratamientos">
+                            <field name="tratamiento_line_ids">
+                                <list editable="bottom">
+                                    <field name="tratamiento_id"/>
+                                    <field name="cantidad"/>
+                                </list>
+                                <form string="Tratamiento">
+                                    <group>
+                                        <field name="tratamiento_id"/>
+                                        <field name="cantidad"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
