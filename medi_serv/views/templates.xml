@@ -11,7 +11,7 @@
 
             <record id="action_lobby_web" model="ir.actions.act_url">
               <field name="name">Lobby Web</field>
-              <field name="url">/lobby</field>
+              <field name="url">/lobby/admin</field>
               <field name="target">self</field>
             </record>
             

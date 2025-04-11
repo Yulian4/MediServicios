@@ -1,53 +1,43 @@
-<!-- Archivo: views/habitacion_views.xml -->
 <odoo>
-    <!-- Vista FORMULARIO -->
-    <record id="view_habitacion_form" model="ir.ui.view">
-        <field name="name">medi_serv.habitacion.form</field>
-        <field name="model">medi_serv.habitacion</field>
+    <record id="view_form_insumo" model="ir.ui.view">
+        <field name="name">medi_serv.insumo.form</field>
+        <field name="model">medi_serv.insumo</field>
         <field name="arch" type="xml">
-            <form string="Habitación">
+            <form string="Insumo Médico">
                 <sheet>
                     <group>
                         <field name="nombre"/>
-                        <field name="codigo"/>
-                        <field name="disponible"/>
+                        <field name="tipo"/>
+                        <field name="descripcion"/>
+                        <field name="unidad_medida"/>
+                        <field name="stock"/>
+                        <field name="precio_unitario"/>
+                        <field name="fecha_vencimiento"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-
-    <!-- Vista KANBAN (personalizada para evitar error raw_value) -->
-    <record id="view_habitacion_kanban" model="ir.ui.view">
-        <field name="name">medi_serv.habitacion.kanban</field>
-        <field name="model">medi_serv.habitacion</field>
+  
+    <record id="view_list_insumo" model="ir.ui.view">
+        <field name="name">medi_serv.insumo.list</field>
+        <field name="model">medi_serv.insumo</field>
         <field name="arch" type="xml">
-            <kanban class="o_kanban_small_column" quick_create="false" default_order="nombre">
-                <templates>
-                    <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_card #{record.disponible.raw_value ? 'bg-success' : 'bg-danger'} o_kanban_global_click" >
-                            <strong><t t-esc="record.nombre.value"/></strong><br/>
-                            Código: <t t-esc="record.codigo.value"/><br/>
-                            Estado:
-                            <span t-if="record.disponible.raw_value" class="text-success">Disponible</span>
-                            <span t-if="!record.disponible.raw_value" class="text-danger">Ocupado</span>
-                        </div>
-                    </t>
-                </templates>
+            <list string="Insumos Médicos">
                 <field name="nombre"/>
-                <field name="codigo"/>
-                <field name="disponible"/>
-            </kanban>
+                <field name="tipo"/>
+                <field name="unidad_medida"/>
+                <field name="stock"/>
+            </list>
         </field>
     </record>
-
-    <!-- Acción -->
-    <record id="action_medi_serv_habitacion" model="ir.actions.act_window">
-        <field name="name">Habitaciones</field>
-        <field name="res_model">medi_serv.habitacion</field>
-        <field name="view_mode">kanban,form</field>
+  
+    <record id="action_insumo" model="ir.actions.act_window">
+        <field name="name">Insumos</field>
+        <field name="res_model">medi_serv.insumo</field>
+        <field name="view_mode">list,form</field>
     </record>
-
-    <!-- Menú -->
-    <menuitem id="menu_medi_serv_habitacion" name="Habitaciones" parent="menu_root" action="action_medi_serv_habitacion"/>
-</odoo>
+  
+    
+    <menuitem id="menu_insumo" name="Gestionar Insumos" parent="menu_root" action="action_insumo"/>
+  </odoo>
