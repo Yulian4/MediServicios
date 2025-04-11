@@ -5,6 +5,7 @@ class PreparacionQ(models.Model):
     _description = 'PreparacionQ'
     _rec_name = 'name'
 
+    name = fields.Char(string='Código de Registro', required=True)
     paciente_id = fields.Many2one('medi_serv.paciente', string='Paciente', required=True)
     descripcion = fields.Text(string='Descripción')
     fecha_preparacion = fields.Date(string='Fecha de Preparación', default=fields.Date.context_today, required=True)
