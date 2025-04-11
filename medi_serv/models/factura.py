@@ -21,3 +21,6 @@ class Factura(models.Model):
             # Sumar los precios de los medicamentos asociados
             total = sum(preparacion.medicamento_id.precio for preparacion in preparaciones)
             record.total_medicamentos = total
+            
+    def imprimir_factura(self):
+        return self.env.ref('medi_serv.report_factura').report_action(self)

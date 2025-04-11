@@ -26,6 +26,9 @@
                         <field name="total_medicamentos" readonly="1"/>
                         <field name="estado"/>
                     </group>
+                    <footer>
+                        <button name="imprimir_factura" type="object" string="Imprimir Factura" class="btn-primary"/>
+                    </footer>
                 </sheet>
             </form>
         </field>
