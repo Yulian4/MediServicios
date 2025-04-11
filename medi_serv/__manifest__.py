@@ -23,8 +23,8 @@ Modulo en Odoo que integra el flujo completo de atención médica de la Clínica
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/ficha_clinica.xml',
         #'views/views.xml',
-        'views/templates.xml',
         'views/lobby_template.xml',
         #'views/insumos.xml',
         'views/medicamentos.xml',
@@ -48,7 +48,8 @@ Modulo en Odoo que integra el flujo completo de atención médica de la Clínica
         'views/zmedicoscrear.xml',
         'views/zpaciente.xml',
         'views/zpacientecrear.xml',
-
+        'views/alta_medica.xml',
+        'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
