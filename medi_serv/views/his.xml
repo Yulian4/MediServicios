@@ -1,0 +1,43 @@
+<odoo>
+    <template id="historia_clinica_list" name="Lista de Historias Clínicas">
+        <t t-call="website.layout">
+            <div class="container">
+                <h2>Lista de Historias Clínicas</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Paciente</th>
+                            <th>Médico</th>
+                            <th>Fecha Apertura</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="historias" t-as="historia">
+                            <tr>
+                                <td>
+                                    <t t-esc="historia.cod_historia"/>
+                                </td>
+                                <td>
+                                    <t t-esc="historia.nomb_pac"/>
+                                </td>
+                                <td>
+                                    <t t-esc="historia.nomb_med.name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="historia.fech_apertura"/>
+                                </td>
+                                <td>
+                                    <a t-att-href="'/historia_clinica/editar/%s' % historia.id" class="btn btn-primary btn-sm">Editar</a>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <a href="/historia_clinica/nueva" class="btn btn-success">Nueva Historia Clínica</a>
+            </div>
+        </t>
+    </template>
+
+</odoo>

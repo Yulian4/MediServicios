@@ -2,7 +2,6 @@
     <template id="vista_medicamento_web" name="Vista HTML Medicamentos">
         <t t-call="website.layout">
 
-            <!-- Línea para cargar los assets CSS personalizados -->
             <t t-call-assets="web.assets_frontend" t-js="false"/>
 
             <div class="container mt-5 mb-5">

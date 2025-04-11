@@ -1,0 +1,111 @@
+<odoo>
+    <template id="crear_historia_clinica" name="Crear Historia Clínica">
+        <t t-call="website.layout">
+            <div class="container">
+                <h2>Nueva Historia Clínica</h2>
+                <form action="/historia_clinica/guardar" method="POST">
+                    <div class="form-group">
+                        <label>Código Historia:</label>
+                        <input type="text" name="cod_historia" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Paciente:</label>
+                        <select name="id_pac" class="form-control">
+                            <t t-foreach="pacientes" t-as="paciente">
+                                <option t-att-value="paciente.id">
+                                    <t t-esc="paciente.name"/>
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Médico:</label>
+                        <select name="nomb_med" class="form-control">
+                            <t t-foreach="medicos" t-as="medico">
+                                <option t-att-value="medico.id">
+                                    <t t-esc="medico.name"/>
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Motivo de la Consulta:</label>
+                        <textarea name="motivo_consulta" class="form-control"></textarea>
+                    </div>
+
+                    <!-- Nuevos campos añadidos según el modelo -->
+                    <div class="form-group">
+                        <label>Descripción Consulta:</label>
+                        <textarea name="descripcion_consulta" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Arritmia:</label>
+                        <select name="arritmia" class="form-control">
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cáncer:</label>
+                        <select name="cancer" class="form-control">
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Insuficiencia Cardíaca:</label>
+                        <select name="insuf_card" class="form-control">
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Emergencia Hipertensiva:</label>
+                        <select name="emergencia_hip" class="form-control">
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <!-- Campos adicionales de antecedentes y hábitos -->
+                    <div class="form-group">
+                        <label>Consumo de Alcohol:</label>
+                        <select name="alcohol" class="form-control">
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fumador:</label>
+                        <select name="fumador" class="form-control">
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Peso:</label>
+                        <input type="text" name="peso" class="form-control"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Frecuencia Cardiaca:</label>
+                        <input type="text" name="frecuencia_cardiaca" class="form-control"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Presión Arterial:</label>
+                        <input type="text" name="presion_arterial" class="form-control"/>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
+        </t>
+    </template>
+</odoo>

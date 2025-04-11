@@ -45,7 +45,13 @@ Modulo en Odoo que integra el flujo completo de atención médica de la Clínica
         #'views/inicio.xml'
         'views/zmedicos.xml',
         'views/zmedicoscrear.xml',
-        'views/zmedicoEdit.xml'
+        #'views/zmedicoEdit.xml',
+        'views/zpreparacionq.xml',
+        'views/zpreparacionqcrear.xml',
+        'views/his.xml',
+        'views/his2.xml',
+        'views/his3.xml',
+        
     ],
     # only loaded in demonstration mode
     'demo': [

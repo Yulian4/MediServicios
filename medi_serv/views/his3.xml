@@ -1,0 +1,24 @@
+<odoo>
+
+    <template id="editar_historia_clinica" name="Editar Historia Clínica">
+        <t t-call="website.layout">
+            <div class="container">
+                <h2>Editar Historia Clínica</h2>
+                <form t-att-action="'/historia_clinica/actualizar/%s' % historia.id" method="POST">
+                    <div class="form-group">
+                        <label>Código Historia:</label>
+                        <input type="text" name="cod_historia" t-att-value="historia.cod_historia" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Motivo de la Consulta:</label>
+                        <textarea name="motivo_consulta" class="form-control">
+                            <t t-esc="historia.motivo_consulta"/>
+                        </textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Actualizar</button>
+                </form>
+            </div>
+        </t>
+    </template>
+
+</odoo>

@@ -1,60 +1,71 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="paciente_edit" name="Editar Paciente">
+    <template id="editar_paciente" name="Editar Paciente">
         <t t-call="website.layout">
-            <div class="container mt-4">
-                <h2 class="mb-3 text-warning">Editar Paciente</h2>
-                <form method="POST" action="/paciente/editar/todo">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" class="form-control" t-att-value="paciente.name" required="required"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="apellidos">Apellidos</label>
-                        <input type="text" id="apellidos" name="apellidos" class="form-control" t-att-value="paciente.apellidos" required="required"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control" t-att-value="paciente.fecha_nacimiento"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Teléfono</label>
-                        <input type="text" id="telefono" name="telefono" class="form-control" t-att-value="paciente.telefono"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" t-att-value="paciente.email"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="sexo">Sexo</label>
-                        <select id="sexo" name="sexo" class="form-control">
-                            <option t-att-selected="paciente.sexo == 'masculino'" value="masculino">Masculino</option>
-                            <option t-att-selected="paciente.sexo == 'femenino'" value="femenino">Femenino</option>
-                            <option t-att-selected="paciente.sexo == 'otro'" value="otro">Otro</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="acompanante">¿Acompañante?</label>
-                        <select id="acompanante" name="acompanante" class="form-control">
-                            <option t-att-selected="paciente.acompanante == 'si'" value="si">Sí</option>
-                            <option t-att-selected="paciente.acompanante == 'no'" value="no">No</option>
-                        </select>
-                    </div>
-                    <div class="form-group" t-if="paciente.acompanante == 'si'">
-                        <label for="nombre_acompanante">Nombre del Acompañante</label>
-                        <input type="text" id="nombre_acompanante" name="nombre_acompanante" class="form-control" t-att-value="paciente.nombre_acompanante"/>
-                    </div>
-                    <div class="form-group" t-if="paciente.acompanante == 'si'">
-                        <label for="telefono_acompanante">Teléfono del Acompañante</label>
-                        <input type="text" id="telefono_acompanante" name="telefono_acompanante" class="form-control" t-att-value="paciente.telefono_acompanante"/>
-                    </div>
-                    <div class="form-group" t-if="paciente.acompanante == 'si'">
-                        <label for="parentezco_acompanante">Parentesco del Acompañante</label>
-                        <input type="text" id="parentezco_acompanante" name="parentezco_acompanante" class="form-control" t-att-value="paciente.parentezco_acompanante"/>
-                    </div>
-                    <button type="submit" class="btn btn-warning">Guardar Cambios</button>
+            <div class="oe_structure">
+                <h1>Editar Paciente</h1>
+                <form t-att-action="'/paciente/editar/' + str(paciente.id)" method="POST">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                    <label>Nombre:</label>
+                    <input type="text" name="name" t-att-value="paciente.name" required="required"/><br/>
+
+<label>Apellidos:</label>
+<input type="text" name="apellidos" t-att-value="paciente.apellidos" required="required"/><br/>
+
+<label>Fecha de Nacimiento:</label>
+<input type="date" name="fecha_nacimiento" t-att-value="paciente.fecha_nacimiento"/>
+                    <br/>
+
+                    <label>Tipo de Documento:</label>
+                    <select name="tipodoic">
+                        <option value="ti" t-att-selected="paciente.tipodoic == 'ti'">TI</option>
+                        <option value="cc" t-att-selected="paciente.tipodoic == 'cc'">CC</option>
+                    </select>
+                    <br/>
+
+                    <label>Teléfono:</label>
+                    <input type="text" name="telefono" t-att-value="paciente.telefono"/>
+                    <br/>
+
+                    <label>Email:</label>
+                    <input type="email" name="email" t-att-value="paciente.email"/>
+                    <br/>
+
+                    <label>Dirección:</label>
+                    <input type="text" name="direccion" t-att-value="paciente.direccion"/>
+                    <br/>
+
+                    <label>Sexo:</label>
+                    <select name="sexo">
+                        <option value="masculino" t-att-selected="paciente.sexo == 'masculino'">Masculino</option>
+                        <option value="femenino" t-att-selected="paciente.sexo == 'femenino'">Femenino</option>
+                        <option value="otro" t-att-selected="paciente.sexo == 'otro'">Otro</option>
+                    </select>
+                    <br/>
+
+                    <label>Acompañante:</label>
+                    <select name="acompanante">
+                        <option value="si" t-att-selected="paciente.acompanante == 'si'">Sí</option>
+                        <option value="no" t-att-selected="paciente.acompanante == 'no'">No</option>
+                    </select>
+                    <br/>
+
+                    <label>Nombre del Acompañante:</label>
+                    <input type="text" name="nombre_acompanante" t-att-value="paciente.nombre_acompanante"/>
+                    <br/>
+
+                    <label>Teléfono del Acompañante:</label>
+                    <input type="text" name="telefono_acompanante" t-att-value="paciente.telefono_acompanante"/>
+                    <br/>
+
+                    <label>Parentesco del Acompañante:</label>
+                    <input type="text" name="parentezco_acompanante" t-att-value="paciente.parentezco_acompanante"/>
+                    <br/>
+
+                    <button type="submit">Actualizar</button>
                 </form>
             </div>
         </t>
     </template>
+
 </odoo>
