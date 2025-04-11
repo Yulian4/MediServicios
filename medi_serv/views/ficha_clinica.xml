@@ -84,7 +84,7 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem id="menu_ficha_clinica_root" name="Fichas Clínicas" parent="menu_root" sequence="10" />
-    <menuitem id="menu_ficha_clinica" name="Fichas Clínicas" parent="menu_ficha_clinica_root" action="action_ficha_clinica"/>
+    <!-- <menuitem id="menu_ficha_clinica_root" name="Fichas Clínicas" parent="menu_root" sequence="10" />
+    <menuitem id="menu_ficha_clinica" name="Fichas Clínicas" parent="menu_ficha_clinica_root" action="action_ficha_clinica"/> -->
 
 </odoo>
