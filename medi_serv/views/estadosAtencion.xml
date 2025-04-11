@@ -1,13 +1,15 @@
 <odoo>
+    <!-- Vista Formulario -->
     <record id="view_estado_form" model="ir.ui.view">
         <field name="name">estado.form</field>
         <field name="model">medi_serv.estado</field>
         <field name="arch" type="xml">
-            <form string="estado">
+            <form string="Estado">
                 <sheet>
                     <group>
                         <field name="paciente"/>
-                        <field name="presion"/>
+                        <field name="presion_sistolica"/>
+                        <field name="presion_diastolica"/>
                         <field name="temperatura"/>
                         <field name="frecuencia_cardiaca"/>
                         <field name="tipo_atencion" readonly="1"/>
@@ -18,20 +20,23 @@
         </field>
     </record>
 
+    <!-- Vista Kanban -->
     <record id="view_estado_kanban" model="ir.ui.view">
         <field name="name">estado.kanban</field>
         <field name="model">medi_serv.estado</field>
         <field name="arch" type="xml">
-            <kanban class="o_kanban_estado">
+            <kanban class="o_kanban_estado" color_field="kanban_color">
                 <field name="paciente"/>
                 <field name="tipo_atencion"/>
                 <field name="estado"/>
+                <field name="kanban_color"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_card" style="border:1px solid #ccc; border-radius:10px; padding:10px;">
+                        <div t-attf-class="oe_kanban_card o_kanban_color_#{kanban_color}"
+                             style="border-radius:10px; padding:10px;">
                             <strong><field name="paciente"/></strong><br/>
                             <span>Atención: <field name="tipo_atencion"/></span><br/>
-                            <span>Triage: <field name="estado"/></span>
+                            <span>Estado: <field name="estado"/></span>
                         </div>
                     </t>
                 </templates>
@@ -39,11 +44,10 @@
         </field>
     </record>
 
+    <!-- Acción -->
     <record id="action_estado" model="ir.actions.act_window">
-        <field name="name">estado</field>
+        <field name="name">Estado Médico</field>
         <field name="res_model">medi_serv.estado</field>
         <field name="view_mode">kanban,form</field>
     </record>
-
-    <!-- <menuitem id="menu_estado" name="estado" parent="menu_root" action="action_estado"/> -->
 </odoo>

@@ -3,12 +3,20 @@
     <menuitem id="menu_root" name="Medi Servicios"/>
     <menuitem id="menu_administrativo" name="Area Administrativa" parent="menu_root"/>
     <menuitem id="menu_medicamento" name="Gestionar Medicamentos" parent="menu_administrativo" action="action_medicamento"/>
-    <menuitem id="menu_tratamiento_proc" name="Tratamientos y Procedimientos Quirúrgicos" parent="menu_administrativo" action="action_tratamiento_proc"/>
-    <menuitem id="menu_habitaciones" name="Habitaciones" parent="menu_administrativo" action="action_medi_serv_habitacion"/>
+    <menuitem id="menu_tratamiento_proc" name="Gestionar Tratamientos y Procedimientos Quirúrgicos" parent="menu_administrativo" action="action_tratamiento_proc"/>
+    <menuitem id="menu_habitaciones" name="Gestionar Habitaciones" parent="menu_administrativo" action="action_medi_serv_habitacion"/>
+    <menuitem id="menu_medicos" name="Gestionar medicos" parent="menu_administrativo" action="action_medico" sequence="10"/>
+    
+    
     <menuitem id="menu_recepcion" name="Area Recepcion" parent="menu_root"/>
-    <menuitem id="menu_pacientes" parent="menu_recepcion" action="action_paciente" sequence="10"/>
-    <menuitem id="menu_factura_root" name="Facturas" sequence="20" parent="menu_recepcion" action="action_factura"/>
-    <menuitem id="menu_medicos" parent="menu_administrativo" action="action_medico" sequence="10"/>
+    <menuitem id="menu_pacientes" name="Pacientes" parent="menu_recepcion" action="action_paciente" sequence="10"/>
+    <menuitem id="menu_factura_root" name="Facturas Finales" sequence="20" parent="menu_recepcion" action="action_factura"/>
+    
+    <menuitem id="menu_asistencial" name="Area Asistencial" parent="menu_root"/>
+    <menuitem id="menu_medi_serv_alta" name="Altas Médicas" parent="menu_asistencial" action="action_alta_medica" sequence="20"/>
+    <menuitem id="menu_ficha_clinica" name="Fichas Clínicas" parent="menu_asistencial" action="action_ficha_clinica"/>
+    <menuitem id="menu_preparacionq_root" name="Preparaciones Quirúrgicas" sequence="10" parent="menu_asistencial" action="action_preparacionq"/> 
+    <menuitem id="menu_recuperacion_hosp" name="Recuperación Hospitalaria" parent="menu_asistencial" action="action_recuperacion_hosp"/>
 
   </data>
 </odoo>
