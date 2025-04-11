@@ -49,5 +49,5 @@
     </record>
 
     <!-- Menú -->
-    <menuitem id="menu_medi_serv_habitacion" name="Habitaciones" parent="menu_root" action="action_medi_serv_habitacion"/>
-</odoo>
+    <!-- <menuitem id="menu_medi_serv_habitacion" name="Habitaciones" parent="menu_root" action="action_medi_serv_habitacion"/>
+</odoo> -->

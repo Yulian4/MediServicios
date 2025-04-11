@@ -1,13 +1,10 @@
 <odoo>
   <data>
-      <menuitem id="menu_root" name="Medi Servicios"/>
-        
-            <!-- Acción URL que redirige a tu ruta del controlador /facturas -->
-            <record id="action_facturas_web" model="ir.actions.act_url">
-              <field name="name">Ver Facturas Web</field>
-              <field name="url">/facturas</field>
-              <field name="target">self</field> <!-- o 'new' si quieres abrir en nueva pestaña -->
-            </record>
+    <menuitem id="menu_root" name="Medi Servicios"/>
+    <menuitem id="menu_administrativo" name="Area Administrativa" parent="menu_root"/>
+    <menuitem id="menu_medicamento" name="Gestionar Medicamentos" parent="menu_administrativo" action="action_medicamento"/>
+    <menuitem id="menu_tratamiento_proc" name="Tratamientos y Procedimientos Quirúrgicos" parent="menu_administrativo" action="action_tratamiento_proc"/>
+    <menuitem id="menu_administrativo" name="Habitaciones" parent="menu_root" action="action_medi_serv_habitacion"/>
 
             <record id="action_lobby_web" model="ir.actions.act_url">
               <field name="name">Lobby Web</field>

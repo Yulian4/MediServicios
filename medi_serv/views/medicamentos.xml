@@ -41,5 +41,5 @@
   </record>
 
   
-  <menuitem id="menu_medicamento" name="Gestionar Medicamentos" parent="menu_root" action="action_medicamento"/>
+  <!-- <menuitem id="menu_medicamento" name="Gestionar Medicamentos" parent="menu_root" action="action_medicamento"/> -->
 </odoo>

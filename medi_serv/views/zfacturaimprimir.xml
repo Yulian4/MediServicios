@@ -4,50 +4,80 @@
 
             <t t-call-assets="web.assets_frontend" t-js="false"/>
 
-            <div class="container mt-5 mb-5"/>
+            <div class="container mt-5 mb-5">
                 <div class="card shadow p-4">
                     <h2 class="text-center text-primary">Factura</h2>
-                <div class="contenedor-factura">
-                    <h2 class="text-center text-primary">Medicamentos</h2>
-                    <hr/>
-                    <p>
-                        <strong>Número:</strong>
-                        <t t-esc="factura.name"/>
-                    </p>
-                    <p>
-                        <strong>Paciente:</strong>
-                        <t t-esc="factura.paciente_id.name"/>
-                    </p>
-                    <p>
-                        <strong>Fecha:</strong>
-                        <t t-esc="factura.fecha_factura"/>
-                    </p>
-                    <p>
-                        <strong>Total:</strong> $                        <t t-esc="factura.total_medicamentos"/>
-                    </p>
-                    <p>
-                        <strong>Estado:</strong>
-                        <t t-esc="factura.estado"/>
-                    </p>
+                    <div class="contenedor-factura">
+                        <h3 class="text-center text-primary">Datos Generales</h3>
+                        <hr/>
+                        <p>
+                            <strong>Número:</strong>
+                            <t t-esc="factura.name"/>
+                        </p>
+                        <p>
+                            <strong>Paciente:</strong>
+                            <t t-esc="factura.paciente_id.name"/>
+                        </p>
+                        <p>
+                            <strong>Fecha:</strong>
+                            <t t-esc="factura.fecha_factura"/>
+                        </p>
+                        <p>
+                            <strong>Total:</strong> $                            <t t-esc="factura.total_medicamentos"/>
+                        </p>
+                        <p>
+                            <strong>Estado:</strong>
+                            <t t-esc="factura.estado"/>
+                        </p>
 
-                    <hr/>
-                    <p class="text-center text-muted">Gracias por su confianza 🏥</p>
-                    <t t-foreach="medicamentos" t-as="med">
-                        <div class="texto-1 mb-4">
-                            <p><strong>Código:</strong> <t t-esc="med.codigo"/></p>
-                            <p><strong>Nombre:</strong> <t t-esc="med.nombre"/></p>
-                            <p><strong>Principio Activo:</strong> <t t-esc="med.principio_activo"/></p>
-                            <p><strong>Forma Farmacéutica:</strong> <t t-esc="med.forma_farmaceutica"/></p>
-                            <p><strong>Concentración:</strong> <t t-esc="med.concentracion"/></p>
-                            <p><strong>Vía de Administración:</strong> <t t-esc="med.via_administracion"/></p>
-                            <p><strong>Dosis Recomendada:</strong> <t t-esc="med.dosis_recomendada"/></p>
-                            <p><strong>Precio:</strong> $<t t-esc="med.precio"/></p>
-                            <hr/>
+                        <hr/>
+                        <h4 class="text-center text-secondary mt-4">Medicamentos</h4>
+
+                        <t t-if="medicamentos">
+                            <t t-foreach="medicamentos" t-as="med">
+                                <div class="texto-1 mb-4">
+                                    <p>
+                                        <strong>Código:</strong>
+                                        <t t-esc="med.codigo"/>
+                                    </p>
+                                    <p>
+                                        <strong>Nombre:</strong>
+                                        <t t-esc="med.nombre"/>
+                                    </p>
+                                    <p>
+                                        <strong>Principio Activo:</strong>
+                                        <t t-esc="med.principio_activo"/>
+                                    </p>
+                                    <p>
+                                        <strong>Forma Farmacéutica:</strong>
+                                        <t t-esc="med.forma_farmaceutica"/>
+                                    </p>
+                                    <p>
+                                        <strong>Concentración:</strong>
+                                        <t t-esc="med.concentracion"/>
+                                    </p>
+                                    <p>
+                                        <strong>Vía de Administración:</strong>
+                                        <t t-esc="med.via_administracion"/>
+                                    </p>
+                                    <p>
+                                        <strong>Dosis Recomendada:</strong>
+                                        <t t-esc="med.dosis_recomendada"/>
+                                    </p>
+                                    <p>
+                                        <strong>Precio:</strong> $                                        <t t-esc="med.precio"/>
+                                    </p>
+                                    <hr/>
+                                </div>
+                            </t>
+                        </t>
+                        <t t-if="not medicamentos">
+                            <p class="text-muted text-center">No se encontraron medicamentos relacionados.</p>
+                        </t>
+
+                        <div class="text-center mt-4">
+                            <a href="/facturas" class="btn btn-secondary">Volver</a>
                         </div>
-                    </t>
-
-                    <div class="text-center mt-3">
-                        <a href="/facturas" class="btn btn-secondary">Volver</a>
                     </div>
                 </div>
             </div>
