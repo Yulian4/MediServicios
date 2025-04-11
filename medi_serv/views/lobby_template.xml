@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="lobby_template" name="Lobby MediServ">
+    <t t-call="website.layout">
+
+      <div class="container mt-5">
+        <div class="text-center">
+          <h1 class="text-primary mb-4">Bienvenido al Panel Administrativo 🏥</h1>
+        </div>
+
+        <div class="row justify-content-center">
+          <!-- Botón para crear factura -->
+          <div class="col-md-4 mb-3">
+            <form t-attf-action="/factura/crear" method="get">
+              <button type="submit" class="btn btn-primary btn-block w-100 py-3">
+                Crear Factura
+              </button>
+            </form>
+          </div>
+
+          <!-- Botón para ver facturas -->
+          <div class="col-md-4 mb-3">
+            <form t-attf-action="/facturas" method="get">
+              <button type="submit" class="btn btn-success btn-block w-100 py-3">
+                Ver Facturas
+              </button>
+            </form>
+          </div>
+
+          <!-- Botón para otro menú -->
+          <div class="col-md-4 mb-3">
+            <form t-attf-action="/medicamentos" method="get">
+              <button type="submit" class="btn btn-warning btn-block w-100 py-3">
+                Medicamentos
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </t>
+  </template>
+</odoo>

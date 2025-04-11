@@ -59,7 +59,7 @@ class FacturaController(http.Controller):
         return request.render('medi_serv.paciente_edit', {
             'paciente': paciente
         })
-<<<<<<< HEAD
+
 
     @http.route('/paciente/editar/todo', auth='public', website=True, methods=['POST'])
     def editar_paciente_guardar(self, **post):
@@ -79,16 +79,4 @@ class FacturaController(http.Controller):
                 'parentezco_acompanante': post.get('parentezco_acompanante'),
             })
         return request.redirect('/pacientes')
-=======
-    
-    #implementacion de api para medicamentos
-    class MedicamentoController(http.Controller):
 
-        @http.route('/medicamentos', auth='public', website=True)
-        def mostrar_medicamentos(self, **kw):
-            medicamentos = request.env['medi_serv.medicamento'].sudo().search([])
-            return request.render('medi_serv.vista_medicamento_web', {
-                'medicamentos': medicamentos
-            })
-
->>>>>>> dff707ebb3d4c42a9acfc2ef01fa726949690416
