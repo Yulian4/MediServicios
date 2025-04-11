@@ -1,0 +1,106 @@
+<odoo>
+    <record id="view_ficha_clinica_tree" model="ir.ui.view">
+        <field name="name">ficha.clinica.tree</field>
+        <field name="model">medi_serv.ficha_clinica</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="paciente_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_ficha_clinica_form" model="ir.ui.view">
+        <field name="name">ficha.clinica.form</field>
+        <field name="model">medi_serv.ficha_clinica</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Información del Paciente">
+                    <field name="paciente_id" readonly="1"/>
+                    <field name="paciente_id.email" readonly="1"/>
+                    <field name="paciente_id.telefono" readonly="1"/>
+                    <field name="paciente_id.direccion" readonly="1"/>
+                    <field name="paciente_id.sexo" readonly="1"/>
+                </group>
+
+                <notebook>
+                    <page string="Historias Clínicas">
+                        <field name="historia_ids">
+                            <list readonly="1">
+                                <field name="cod_historia"/>
+                                <field name="fech_apertura"/>
+                                <field name="nomb_med"/>
+                            </list>
+                            <form readonly="1">
+                                <!-- Puedes agregar más campos -->
+                                <group>
+                                    <field name="motivo_consulta"/>
+                                    <field name="descripcion_consulta"/>
+                                    <field name="fech_apertura"/>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+
+                    <page string="Preparaciones Quirúrgicas">
+                        <field name="preparacion_ids">
+                            <list readonly="1">
+                                <field name="descripcion"/>
+                                <field name="fecha_preparacion"/>
+                            </list>
+                            <form readonly="1">
+                                <group>
+                                    <field name="descripcion"/>
+                                    <field name="fecha_preparacion"/>
+                                </group>
+                                <notebook>
+                                    <page string="Medicamentos">
+                                        <field name="medicamento_line_ids"/>
+                                    </page>
+                                    <page string="Tratamientos">
+                                        <field name="tratamiento_line_ids"/>
+                                    </page>
+                                </notebook>
+                            </form>
+                        </field>
+                    </page>
+
+                    <page string="Registro de Cirugía">
+                        <field name="registro_cirugia_ids">
+                            <list>
+                                <field name="name"/>
+                            </list>
+                        </field>
+                    </page>
+
+                    <page string="Recuperaciones">
+                        <field name="recuperacion_ids">
+                            <list>
+                                <field name="name"/>
+                            </list>
+                        </field>
+                    </page>
+
+                    <page string="Altas Médicas">
+                        <field name="alta_medica_ids">
+                            <list>
+                                <field name="name"/>
+                            </list>
+                        </field>
+                    </page>
+
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_ficha_clinica" model="ir.actions.act_window">
+        <field name="name">Fichas Clínicas</field>
+        <field name="res_model">medi_serv.ficha_clinica</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_ficha_clinica_root" name="Fichas Clínicas" sequence="10" />
+    <menuitem id="menu_ficha_clinica" name="Fichas Clínicas" parent="menu_ficha_clinica_root" action="action_ficha_clinica"/>
+
+</odoo>
