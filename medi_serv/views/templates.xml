@@ -1,5 +1,11 @@
 <odoo>
     <data>
+    <record id="inicio_action" model="ir.actions.act_url">
+        <field name="name">Inicio</field>
+        <field name="type">ir.actions.act_url</field>
+        <field name="url">/inicio</field>  <!-- URL de la vista de inicio que quieres abrir -->
+        <field name="target">self</field>   <!-- Esto abre la URL en la misma ventana -->
+    </record>
         <menuitem id="menu_root" name="Medi Servicios"/>
     </data>
 </odoo>

@@ -1,0 +1,50 @@
+<odoo>
+    <template id="lista_medicos" name="Lista de Médicos">
+        <t t-call="website.layout">
+            <div class="container">
+                <h2>Lista de Médicos</h2>
+                <a class="btn btn-primary mb-3" href="/medico/crear">Crear Nuevo Médico</a>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Especialidad</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Sede</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="medicos" t-as="medico">
+                            <tr>
+                                <td>
+                                    <t t-esc="medico.name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="medico.apellidos"/>
+                                </td>
+                                <td>
+                                    <t t-esc="medico.especialidad"/>
+                                </td>
+                                <td>
+                                    <t t-esc="medico.email"/>
+                                </td>
+                                <td>
+                                    <t t-esc="medico.telefono"/>
+                                </td>
+                                <td>
+                                    <t t-esc="medico.sede"/>
+                                </td>
+                                <td>
+                                    <a class="btn btn-sm btn-secondary" t-att-href="'/medico/editar/%s' % medico.id">Editar</a>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>

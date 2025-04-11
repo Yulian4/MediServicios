@@ -1,0 +1,33 @@
+<odoo>
+<template id="editar_medico" name="Editar Médico">
+    <t t-call="website.layout">
+        <div class="container">
+            <h2>Editar Médico</h2>
+            <form t-att-action="'/medico/actualizar/%s' % medico.id" method="POST">
+                <div class="form-group"><label>Nombre</label><input class="form-control" name="name" t-att-value="medico.name"/></div>
+                <div class="form-group"><label>Apellidos</label><input class="form-control" name="apellidos" t-att-value="medico.apellidos"/></div>
+                <div class="form-group"><label>Especialidad</label>
+                    <select name="especialidad" class="form-control">
+                        <option value="medicina_general" t-att-selected="medico.especialidad == 'medicina_general'">Medicina General</option>
+                        <option value="medico_urg" t-att-selected="medico.especialidad == 'medico_urg'">Medico Urgencias</option>
+                    </select>
+                </div>
+                <div class="form-group"><label>Email</label><input class="form-control" name="email" t-att-value="medico.email"/></div>
+                <div class="form-group"><label>Teléfono</label><input class="form-control" name="telefono" t-att-value="medico.telefono"/></div>
+                <div class="form-group"><label>Fecha de Nacimiento</label><input class="form-control" type="date" name="fecha_nacimiento" t-att-value="medico.fecha_nacimiento"/></div>
+                <div class="form-group"><label>Sexo</label>
+                    <select name="sexo" class="form-control">
+                        <option value="masculino" t-att-selected="medico.sexo == 'masculino'">Masculino</option>
+                        <option value="femenino" t-att-selected="medico.sexo == 'femenino'">Femenino</option>
+                        <option value="otro" t-att-selected="medico.sexo == 'otro'">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group"><label>Sede</label><input class="form-control" name="sede" t-att-value="medico.sede"/></div>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </form>
+        </div>
+    </t>
+</template>
+
+
+</odoo>

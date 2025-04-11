@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="template_pacientes" name="Lista de Pacientes">
+        <t t-call="website.layout">
+            <t t-set="navbar">
+                <header id="top" class="navbar navbar-expand-md navbar-light bg-light">
+                    <div class="container">
+                        <a class="navbar-brand" href="/">Mi Clínica 🏥</a>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pacientes">Pacientes</a>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+            </t>
+
+            <div class="container mt-4">
+                <h2 class="mb-3 text-primary">Pacientes Registrados</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Edad</th>
+                            <th>Teléfono</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="pacientes" t-as="paciente">
+                            <tr>
+                                <td>
+                                    <t t-esc="paciente.name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="paciente.apellidos"/>
+                                </td>
+                                <td>
+                                    <t t-esc="paciente.edad"/>
+                                </td>
+                                <td>
+                                    <t t-esc="paciente.telefono"/>
+                                </td>
+                                <td>
+                                    <a t-attf-href="/paciente/{{ paciente.id }}" class="btn btn-info btn-sm">Ver</a>
+                                    <a t-attf-href="/paciente/editar/{{ paciente.id }}" class="btn btn-warning btn-sm">Editar</a>
+                                    <form method="POST" t-attf-action="/paciente/eliminar/{{ paciente.id }}" style="display:inline;">
+                                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <a href="/paciente/crear" class="btn btn-primary">Crear Paciente</a>
+            </div>
+
+            <t t-set="footer">
+                <footer class="bg-dark text-white mt-5 p-4 text-center">
+                    <div class="container">
+                        <p>© 2025 Mi Clínica 🏥</p>
+                        <p>
+                            <a href="/contacto" class="text-white">Contáctanos</a>
+                        </p>
+                    </div>
+                </footer>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="paciente_create" name="Crear Paciente">
+        <t t-call="website.layout">
+            <t t-set="navbar">
+                <header id="top" t-attf-class="navbar navbar-expand-md navbar-light bg-light">
+                    <div class="container">
+                        <a class="navbar-brand" href="/">Mi Clínica 🏥</a>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pacientes">Pacientes</a>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+            </t>
+
+            <div class="container mt-4">
+                <h2 class="mb-3 text-primary">Crear Nuevo Paciente</h2>
+                <form method="POST" action="/paciente/crear">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" class="form-control" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos" class="form-control" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="text" id="telefono" name="telefono" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" name="sexo" class="form-control">
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="acompanante">¿Acompañante?</label>
+                        <select id="acompanante" name="acompanante" class="form-control">
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group" t-if="form.acompanante == 'si'">
+                        <label for="nombre_acompanante">Nombre del Acompañante</label>
+                        <input type="text" id="nombre_acompanante" name="nombre_acompanante" class="form-control"/>
+                    </div>
+                    <div class="form-group" t-if="form.acompanante == 'si'">
+                        <label for="telefono_acompanante">Teléfono del Acompañante</label>
+                        <input type="text" id="telefono_acompanante" name="telefono_acompanante" class="form-control"/>
+                    </div>
+                    <div class="form-group" t-if="form.acompanante == 'si'">
+                        <label for="parentezco_acompanante">Parentesco del Acompañante</label>
+                        <input type="text" id="parentezco_acompanante" name="parentezco_acompanante" class="form-control"/>
+                    </div>
+                    <button type="submit" class="btn btn-success">Crear Paciente</button>
+                </form>
+            </div>
+
+            <t t-set="footer">
+                <footer class="bg-dark text-white mt-5 p-4 text-center">
+                    <div class="container">
+                        <p>
+                            <t t-esc="'© 2025'"/>
+                        </p>
+                        <p>
+                            <a href="/contacto" class="text-white">Contáctanos</a>
+                        </p>
+                    </div>
+                </footer>
+            </t>
+        </t>
+    </template>
+</odoo>

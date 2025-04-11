@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="inicio_template" name="Vista de Inicio">
+        <t t-call="website.layout">
+            <div class="container mt-4">
+                <h2 class="text-center mb-4">Bienvenido a la Clínica</h2>
+                <p class="text-center">Seleccione una opción para continuar:</p>
+                <div class="d-flex justify-content-center mt-3">
+                    <a href="/pacientes" class="btn btn-primary mr-2">Ver Pacientes</a>
+                    <a href="/paciente/crear" class="btn btn-secondary">Crear Paciente</a>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
