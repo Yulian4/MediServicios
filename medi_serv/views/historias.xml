@@ -320,6 +320,6 @@
     <menuitem id="menu_historia_clinica" name="Historia Clínica" parent="menu_root" sequence="10"/>
 
     <!-- Menú para crear o ver Historia Clínica -->
-    <menuitem id="submenu_historia_clinica" name="Gestionar Historia Clínica" parent="menu_historia_clinica" action="action_historia_clinica" sequence="1"/>
+    <!-- <menuitem id="submenu_historia_clinica" name="Gestionar Historia Clínica" parent="menu_historia_clinica" action="action_historia_clinica" sequence="1"/> -->
 
 </odoo>

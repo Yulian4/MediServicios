@@ -44,5 +44,5 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem id="menu_factura_root" name="Facturas" sequence="20" parent="menu_root" action="action_factura"/>
+    <!-- <menuitem id="menu_factura_root" name="Facturas" sequence="20" parent="menu_root" action="action_factura"/> -->
 </odoo>

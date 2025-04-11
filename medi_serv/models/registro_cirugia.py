@@ -9,3 +9,4 @@ class RegistroCirugia(models.Model):
     tipo_cirugia = fields.Char(string='Tipo de Cirugía')
     medico_responsable = fields.Char(string='Médico Responsable')
     observaciones = fields.Text(string='Observaciones')
+    

@@ -45,5 +45,5 @@
         <field name="view_mode">kanban,form</field>
     </record>
 
-    <menuitem id="menu_estado" name="estado" parent="menu_root" action="action_estado"/>
+    <!-- <menuitem id="menu_estado" name="estado" parent="menu_root" action="action_estado"/> -->
 </odoo>
