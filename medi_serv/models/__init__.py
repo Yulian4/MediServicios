@@ -11,3 +11,4 @@ from . import factura
 from . import historia_clinica
 from . import tratamientos_proc_cirugias
 from . import estadoAtencion
+from . import ficha_clinica

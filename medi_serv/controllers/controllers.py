@@ -1,16 +1,6 @@
 from odoo import http
 from odoo.http import request
 
-
-class PaginaInicioController(http.Controller):
-
-    @http.route('/inicio', type='http', auth="public", website=True)
-    def inicio(self, **kw):
-        # Esto renderiza la plantilla de inicio que creaste
-        return request.render('medi_serv.inicio_template')
-    
-    
-    
 class FacturaController(http.Controller):
 
     @http.route('/facturas', auth='public', website=True)
@@ -23,59 +13,48 @@ class FacturaController(http.Controller):
             'facturas': facturas
         })
         
+    @http.route('/factura/crear', auth='public', website=True, type='http', methods=['GET', 'POST'], csrf=False)
+    def create_factura(self, **kwargs):
+        if request.httprequest.method == 'POST':
+            factura_data = {
+                'paciente_id': int(kwargs.get('paciente_id')),
+                'fecha_factura': kwargs.get('fecha_factura'),
+                # 'name' se autogenera si lo dejas como 'Nuevo'
+            }
+            request.env['medi_serv.factura'].sudo().create(factura_data)
+            return request.redirect('/facturas')
 
-    # @http.route('/paciente/crear', auth='public', website=True, type='http', methods=['GET', 'POST'])
-    # def create_paciente(self, **kwargs):
-    #     if request.httprequest.method == 'POST':
-    #         # Recoger los datos enviados desde el formulario
-    #         paciente_data = {
-    #             'name': kwargs.get('name'),
-    #             'apellidos': kwargs.get('apellidos'),
-    #             'fecha_nacimiento': kwargs.get('fecha_nacimiento'),
-    #             'telefono': kwargs.get('telefono'),
-    #             'email': kwargs.get('email'),
-    #             'sexo': kwargs.get('sexo'),
-    #             'acompanante': kwargs.get('acompanante'),
-    #             'nombre_acompanante': kwargs.get('nombre_acompanante'),
-    #             'telefono_acompanante': kwargs.get('telefono_acompanante'),
-    #             'parentezco_acompanante': kwargs.get('parentezco_acompanante'),
-    #         }
-            
-    #         # Crear el paciente
-    #         request.env['medi_serv.paciente'].sudo().create(paciente_data)
-            
-    #         # Redirigir al listado de pacientes
-    #         return request.redirect('/pacientes')
+        # Datos vacíos para el formulario
+        factura_data = {
+            'fecha_factura': '',
+        }
 
-    #     # Si la solicitud es GET, mostrar el formulario vacío
-    #     paciente = request.env['medi_serv.paciente'].sudo().new({})
-    #     return request.render('medi_serv.paciente_create', {
-    #         'form': paciente
-    #     })
+        pacientes = request.env['medi_serv.paciente'].sudo().search([])
+        return request.render('medi_serv.facturaCreate', {
+            'factura_data': factura_data,
+            'pacientes': pacientes
+        })
         
-    # @http.route('/paciente/editar/<int:paciente_id>', auth='public', website=True)
-    # def editar_paciente_form(self, paciente_id, **kw):
-    #     paciente = request.env['medi_serv.paciente'].sudo().browse(paciente_id)
-    #     return request.render('medi_serv.paciente_edit', {
-    #         'paciente': paciente
-    #     })
+    @http.route('/factura/<int:factura_id>', type='http', auth='public', website=True)
+    def ver_factura(self, factura_id):
+        factura = request.env['medi_serv.factura'].sudo().browse(factura_id)
+        if not factura.exists():
+            return request.not_found()
 
+        return request.render('medi_serv.vista_factura_detalle', {
+            'factura': factura
+        })
+    
+    #implementacion de api para medicamentos
+    class MedicamentoController(http.Controller):
 
-    # @http.route('/paciente/editar/todo', auth='public', website=True, methods=['POST'])
-    # def editar_paciente_guardar(self, **post):
-    #     paciente_id = int(post.get('id'))
-    #     paciente = request.env['medi_serv.paciente'].sudo().browse(paciente_id)
-    #     if paciente.exists():
-    #         paciente.sudo().write({
-    #             'name': post.get('name'),
-    #             'apellidos': post.get('apellidos'),
-    #             'fecha_nacimiento': post.get('fecha_nacimiento'),
-    #             'telefono': post.get('telefono'),
-    #             'email': post.get('email'),
-    #             'sexo': post.get('sexo'),
-    #             'acompanante': post.get('acompanante'),
-    #             'nombre_acompanante': post.get('nombre_acompanante'),
-    #             'telefono_acompanante': post.get('telefono_acompanante'),
-    #             'parentezco_acompanante': post.get('parentezco_acompanante'),
-    #         })
-    #     return request.redirect('/pacientes')
+        @http.route('/medicamentos', auth='public', website=True)
+        def mostrar_medicamentos(self, **kw):
+            medicamentos = request.env['medi_serv.medicamento'].sudo().search([])
+            return request.render('medi_serv.vista_medicamento_web', {
+                'medicamentos': medicamentos
+            })
+
+    @http.route('/lobby/admin', auth='public', website=True)
+    def lobby(self, **kwargs):
+        return request.render('medi_serv.lobby_template', {})

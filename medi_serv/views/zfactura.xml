@@ -57,7 +57,7 @@
                     </tbody>
                 </table>
                 <a t-attf-href="/factura/crear" class="btn btn-primary">Crear Factura</a>
-                <a t-attf-href="/templates" class="btn btn-primary">Volver</a>
+                <a t-attf-href="/lobby/admin" class="btn btn-primary">Volver</a>
             </div>
 
             <t t-set="footer">
