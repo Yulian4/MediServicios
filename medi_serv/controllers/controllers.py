@@ -80,3 +80,14 @@ class FacturaController(http.Controller):
             })
         return request.redirect('/pacientes')
 
+    @http.route('/lobby', auth='public', website=True)
+    def lobby(self, **kwargs):
+        return request.render('medi_serv.lobby_template', {})
+
+    # controllers/controllers.py
+
+    class LobbyController(http.Controller):
+
+        @http.route('/lobby/admin', auth='public', website=True)
+        def mostrar_lobby(self, **kw):
+            return request.render('medi_serv.lobby_template', {})
