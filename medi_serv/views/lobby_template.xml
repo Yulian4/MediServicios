@@ -11,9 +11,9 @@
         <div class="row justify-content-center">
           <!-- Botón para crear factura -->
           <div class="col-md-4 mb-3">
-            <form t-attf-action="/factura/crear" method="get">
+            <form t-attf-action="/medicos" method="get">
               <button type="submit" class="btn btn-primary btn-block w-100 py-3">
-                Crear Factura
+                Medicos
               </button>
             </form>
           </div>
