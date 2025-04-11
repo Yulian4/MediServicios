@@ -37,6 +37,9 @@ Modulo en Odoo que integra el flujo completo de atención médica de la Clínica
         'views/tratamientos.xml',
         'views/estadosAtencion.xml',
         'views/report_factura.xml',
+        'views/alta_medica.xml',
+        'views/recuperacion_hosp.xml',
+        'views/registro_cirugia.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

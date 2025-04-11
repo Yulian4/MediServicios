@@ -12,6 +12,6 @@ class FichaClinica(models.Model):
     preparacion_ids = fields.One2many('medi_serv.preparacion_q', 'paciente_id', string='Preparaciones Quirúrgicas', readonly=True)
     
     # Campos relacionados a desarrollar en el futuro
-    # registro_cirugia_ids = fields.One2many('medi_serv.registro_cirugia', 'paciente_id', string='Registros de Cirugía', readonly=True)
-    # recuperacion_ids = fields.One2many('medi_serv.recuperacion_hosp', 'paciente_id', string='Recuperaciones', readonly=True)
-    # alta_medica_ids = fields.One2many('medi_serv.alta_medica', 'paciente_id', string='Altas Médicas', readonly=True)
+    registro_cirugia_ids = fields.One2many('medi_serv.registro_cirugia', 'paciente_id', string='Registros de Cirugía', readonly=True)
+    recuperacion_ids = fields.One2many('medi_serv.recuperacion_hosp', 'paciente_id', string='Recuperaciones', readonly=True)
+    alta_medica_ids = fields.One2many('medi_serv.alta_medica', 'paciente_id', string='Altas Médicas', readonly=True)

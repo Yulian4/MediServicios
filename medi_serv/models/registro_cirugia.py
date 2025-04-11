@@ -6,6 +6,5 @@ class RegistroCirugia(models.Model):
 
     paciente_id = fields.Many2one('medi_serv.paciente', string='Paciente', required=True)
     fecha_cirugia = fields.Date(string='Fecha de Cirugía', required=True)
-    tipo_cirugia = fields.Char(string='Tipo de Cirugía')
-    medico_responsable = fields.Char(string='Médico Responsable')
-    observaciones = fields.Text(string='Observaciones')
+    medico_responsable_id = fields.Many2one('medi_serv.medico', string='Médico Responsable', help='Médico encargado de la cirugía')
+    descripcion = fields.Text(string='Descripcion')

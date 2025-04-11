@@ -1,0 +1,75 @@
+<odoo>
+    <record id="view_recuperacion_hosp_form" model="ir.ui.view">
+        <field name="name">medi_serv.recuperacion_hosp.form</field>
+        <field name="model">medi_serv.recuperacion_hosp</field>
+        <field name="arch" type="xml">
+            <form string="Recuperación Hospitalaria">
+                <sheet>
+                    <group>
+                        <field name="paciente_id"/>
+                        <field name="fecha_ingreso"/>
+                        <field name="fecha_egreso"/>
+                        <field name="estado_paciente"/>
+                        <field name="cuidados"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Evoluciones Clínicas">
+                            <field name="evolucion_ids">
+                                <list editable="bottom">
+                                    <field name="fecha"/>
+                                    <field name="descripcion"/>
+                                    <field name="medico_id"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Notas de Enfermería">
+                            <field name="enfermeria_ids">
+                                <list editable="bottom">
+                                    <field name="fecha"/>
+                                    <field name="nota"/>
+                                    <field name="enfermero_id"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Visitas Médicas">
+                            <field name="visita_ids">
+                                <list editable="bottom">
+                                    <field name="fecha"/>
+                                    <field name="motivo"/>
+                                    <field name="medico_id"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_recuperacion_hosp_list" model="ir.ui.view">
+        <field name="name">medi_serv.recuperacion_hosp.list</field>
+        <field name="model">medi_serv.recuperacion_hosp</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="paciente_id"/>
+                <field name="fecha_ingreso"/>
+                <field name="fecha_egreso"/>
+                <field name="estado_paciente"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_recuperacion_hosp" model="ir.actions.act_window">
+        <field name="name">Recuperación Hospitalaria</field>
+        <field name="res_model">medi_serv.recuperacion_hosp</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p>Registre los datos de recuperación hospitalaria del paciente, incluyendo evolución médica, notas de enfermería y visitas clínicas.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_recuperacion_hosp" name="Recuperación Hospitalaria" parent="menu_root" action="action_recuperacion_hosp"/>
+</odoo>

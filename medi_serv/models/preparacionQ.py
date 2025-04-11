@@ -3,6 +3,7 @@ from odoo import fields, models, api
 class PreparacionQ(models.Model):
     _name = 'medi_serv.preparacion_q'
     _description = 'PreparacionQ'
+    _rec_name = 'name'
 
     paciente_id = fields.Many2one('medi_serv.paciente', string='Paciente', required=True)
     descripcion = fields.Text(string='Descripción')
