@@ -15,11 +15,17 @@
         <field name="arch" type="xml">
             <form>
                 <group string="Información del Paciente">
-                    <field name="paciente_id" readonly="1"/>
-                    <field name="paciente_id.email" readonly="1"/>
-                    <field name="paciente_id.telefono" readonly="1"/>
-                    <field name="paciente_id.direccion" readonly="1"/>
-                    <field name="paciente_id.sexo" readonly="1"/>
+                    <field name="paciente_id" editable="new"/>
+                    <field name="paciente_id" invisible="1" context="{'readonly': True}">
+                        <form string="Datos del Paciente">
+                            <group>
+                                <field name="email" readonly="1"/>
+                                <field name="telefono" readonly="1"/>
+                                <field name="direccion" readonly="1"/>
+                                <field name="sexo" readonly="1"/>
+                            </group>
+                        </form>
+                    </field>
                 </group>
 
                 <notebook>
@@ -64,29 +70,7 @@
                         </field>
                     </page>
 
-                    <page string="Registro de Cirugía">
-                        <field name="registro_cirugia_ids">
-                            <list>
-                                <field name="name"/>
-                            </list>
-                        </field>
-                    </page>
-
-                    <page string="Recuperaciones">
-                        <field name="recuperacion_ids">
-                            <list>
-                                <field name="name"/>
-                            </list>
-                        </field>
-                    </page>
-
-                    <page string="Altas Médicas">
-                        <field name="alta_medica_ids">
-                            <list>
-                                <field name="name"/>
-                            </list>
-                        </field>
-                    </page>
+                    
 
                 </notebook>
             </form>
@@ -100,7 +84,7 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem id="menu_ficha_clinica_root" name="Fichas Clínicas" sequence="10" />
+    <menuitem id="menu_ficha_clinica_root" name="Fichas Clínicas" parent="menu_root" sequence="10" />
     <menuitem id="menu_ficha_clinica" name="Fichas Clínicas" parent="menu_ficha_clinica_root" action="action_ficha_clinica"/>
 
 </odoo>
