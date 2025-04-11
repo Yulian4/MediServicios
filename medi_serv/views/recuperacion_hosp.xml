@@ -71,5 +71,5 @@
         </field>
     </record>
 
-    <menuitem id="menu_recuperacion_hosp" name="Recuperación Hospitalaria" parent="menu_root" action="action_recuperacion_hosp"/>
+    <!-- <menuitem id="menu_recuperacion_hosp" name="Recuperación Hospitalaria" parent="menu_root" action="action_recuperacion_hosp"/> -->
 </odoo>
