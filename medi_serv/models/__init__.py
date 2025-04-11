@@ -15,6 +15,4 @@ from . import ficha_clinica
 from . import registro_cirugia
 from . import alta_medica
 from . import recuperacion_hosp
-from . import evolucion_clinica
-from . import nota_enfermeria
-from . import visita_medica
+
