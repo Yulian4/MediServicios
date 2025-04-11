@@ -1,22 +1,48 @@
-# -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http
+from odoo.http import request
+
+class FacturaController(http.Controller):
+
+    @http.route('/facturas', auth='public', website=True)
+    def mostrar_facturas(self, **kw):
+        # Obtener todas las facturas
+        facturas = request.env['medi_serv.factura'].sudo().search([])
+        
+        # Renderizar la plantilla con las facturas obtenidas
+        return request.render('medi_serv.template_facturas', {
+            'facturas': facturas
+        })
+        
 
 
-# class MediServ(http.Controller):
-#     @http.route('/medi_serv/medi_serv', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+    @http.route('/factura/crear', auth='public', website=True, type='http', methods=['GET', 'POST'], csrf=False)
+    def create_factura(self, **kwargs):
+        if request.httprequest.method == 'POST':
+            factura_data = {
+                'paciente_id': int(kwargs.get('paciente_id')),
+                'fecha_factura': kwargs.get('fecha_factura'),
+                # 'name' se autogenera si lo dejas como 'Nuevo'
+            }
+            request.env['medi_serv.factura'].sudo().create(factura_data)
+            return request.redirect('/facturas')
 
-#     @http.route('/medi_serv/medi_serv/objects', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('medi_serv.listing', {
-#             'root': '/medi_serv/medi_serv',
-#             'objects': http.request.env['medi_serv.medi_serv'].search([]),
-#         })
+        # Datos vacíos para el formulario
+        factura_data = {
+            'fecha_factura': '',
+        }
 
-#     @http.route('/medi_serv/medi_serv/objects/<model("medi_serv.medi_serv"):obj>', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('medi_serv.object', {
-#             'object': obj
-#         })
+        pacientes = request.env['medi_serv.paciente'].sudo().search([])
+        return request.render('medi_serv.facturaCreate', {
+            'factura_data': factura_data,
+            'pacientes': pacientes
+        })
+        
+    @http.route('/factura/<int:factura_id>', type='http', auth='public', website=True)
+    def ver_factura(self, factura_id):
+        factura = request.env['medi_serv.factura'].sudo().browse(factura_id)
+        if not factura.exists():
+            return request.not_found()
 
+        return request.render('medi_serv.vista_factura_detalle', {
+            'factura': factura
+        })

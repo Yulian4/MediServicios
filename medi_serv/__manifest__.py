@@ -18,14 +18,14 @@ Modulo en Odoo que integra el flujo completo de atención médica de la Clínica
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','website'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         #'views/views.xml',
         'views/templates.xml',
-        'views/insumos.xml',
+        #'views/insumos.xml',
         'views/medicamentos.xml',
         'views/pacientes.xml',
         'views/medicos.xml',
@@ -35,9 +35,11 @@ Modulo en Odoo que integra el flujo completo de atención médica de la Clínica
         'views/historias.xml',
         'views/tratamientos.xml',
         'views/report_factura.xml',
+        'views/zfactura.xml',
+        'views/zfacturacrear.xml',
+        'views/zfacturaimprimir.xml',
         #'views/zpaciente.xml',
         #'views/zpacienteEdit.xml',
-        #'views/zfactura.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

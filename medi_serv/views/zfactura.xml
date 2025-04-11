@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="template_facturas" name="Lista de Facturas">
+        <t t-call="website.layout">
+            <t t-set="navbar">
+                <header id="top" t-attf-class="navbar navbar-expand-md navbar-light bg-light">
+                    <div class="container">
+                        <a class="navbar-brand" href="/">Mi Clínica 🏥</a>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/facturas">Facturas</a>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+            </t>
+
+            <div class="container mt-4">
+                <h2 class="mb-3 text-primary">Facturas Registradas</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Paciente</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="facturas" t-as="factura">
+                            <tr>
+                                <td>
+                                    <t t-esc="factura.name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="factura.paciente_id.name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="factura.fecha_factura"/>
+                                </td>
+                                <td>
+                                    <t t-esc="factura.total_medicamentos"/>
+                                </td>
+                                <td>
+                                    <t t-esc="factura.estado"/>
+                                </td>
+                                <td>
+                                    <a t-attf-href="/factura/{{ factura.id }}" class="btn btn-primary">Ver</a>
+                                    <form method="POST" t-attf-action="/factura/eliminar/{{factura.id}}">
+                                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <a t-attf-href="/factura/crear" class="btn btn-primary">Crear Factura</a>
+            </div>
+
+            <t t-set="footer">
+                <footer class="bg-dark text-white mt-5 p-4 text-center">
+                    <div class="container">
+                        <p>
+                            <t t-esc="'© 2025'"/>
+                        </p>
+                        <p>
+                            <a href="/contacto" class="text-white">Contáctanos</a>
+                        </p>
+                    </div>
+                </footer>
+            </t>
+        </t>
+    </template>
+</odoo>
